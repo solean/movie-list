@@ -1,0 +1,54 @@
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+p, .bodyText {
+	font-family: 'Georgia', serif;
+	font-size: 14px;
+}
+
+.movieList {
+	font-size: 18px;
+	font-family: 'Avenir Next', Helvetica, Arial, sans-serif;
+}
+
+.movieList li:hover {
+	color: red;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.movieTitle {
+	font-size: 48px;
+	font-family: 'Butler';
+	font-weight: bold;
+	padding-left: 0 !important;
+}
+
+.labelText {
+	font-weight: bold;
+	font-family: 'Avenir Next', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	display: block;
+}
+
+.lightText {
+	color: #A0A0A0;
+}
+
+.activeText {
+	color: red;
+}
+
+.noLinkStyling {
+	color: inherit;
+}
+
+.noLinkStyling:hover {
+	text-decoration: none;
+	color: red;
+}
+
+.people {
+	display: flex;

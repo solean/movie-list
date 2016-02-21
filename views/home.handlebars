@@ -1,0 +1,75 @@
+<html lang="en">
+	<head>
+		<title>Movies</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4 movieList" style="margin-top: 40px;">
+					<ul style="list-style: none;" id="movieList">
+					{{#each movies}}
+						<li>{{this}}</li>
+					{{/each}}
+					</ul>
+				</div>
+				<div class="col-md-4" style="margin-top: 40px;">
+					<div style="height: 70px;">
+						<span class="col-md-6 movieTitle"><a class="noLinkStyling" href="http://www.imdb.com/title/{{movie.imdbID}}">{{movie.Title}}</a></span>
+						<div class="col-md-6" style="display: none;">
+							<div style="width: 150px; height: 20px;">
+								<span class="col-md-6" style="margin: 0; padding: 0;">{{movie.Year}}</span>
+								<span class="col-md-6" style="margin: 0; padding: 0;">{{movie.Rated}}</span>
+							</div>
+							<div style="width: 150px;">
+								<span>{{movie.Genre}}</span>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="people">
+							<div class="left" style="width: 50%;">
+								<div class="director">
+									<span class="labelText">Director</span>
+									<ul style="list-style: none; padding-left: 0;">
+										<li class="bodyText">{{movie.Director}}</li>
+									</ul>
+								</div>
+								<div class="writers">
+									<span class="labelText">Writers</span>
+									<ul style="list-style: none; padding-left: 0;">
+									{{#each movie.Writer}}
+										<li class="bodyText">{{this}}</li>
+									{{/each}}
+									</ul>
+								</div>
+							</div>
+							<div class="right" style="width: 50%;">
+								<div class="cast">
+									<span class="labelText">Cast</span>
+									<ul style="list-style: none; padding-left: 0;">
+									{{#each movie.Actors}}
+										<li class="bodyText">{{this}}</li>
+									{{/each}}
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="plot" style="font-style: italic; margin-top: 20px;">
+						<p>{{movie.Plot}}</p>
+					</div>
+					<div class="awards">
+						<p>{{movie.Awards}}</p>
+					</div>
+				</div>
+				<div class="col-md-4" style="margin-top: 40px; text-align: center;">
+					<img src="{{movie.Poster}}" style="width: 400px;"/>	
+				</div>
+			</div>
+		</div>
+		<script src="js/temp.js"/>
+	</body>
+</html>
