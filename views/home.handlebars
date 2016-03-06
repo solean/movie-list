@@ -2,8 +2,8 @@
 	<head>
 		<title>Movies</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" type="text/css" href="css/style.css"/>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -11,14 +11,14 @@
 				<div class="col-md-4 movieList" style="margin-top: 40px;">
 					<ul style="list-style: none;" id="movieList">
 					{{#each movies}}
-						<li>{{this}}</li>
+						<li class="movieListItem"><a class="noLinkStyling" href="{{generateMovieUrl this}}">{{this}}</a></li>
 					{{/each}}
 					</ul>
 				</div>
 				<div class="col-md-4" style="margin-top: 40px;">
-					<div style="height: 70px;">
-						<span class="col-md-6 movieTitle"><a class="noLinkStyling" href="http://www.imdb.com/title/{{movie.imdbID}}">{{movie.Title}}</a></span>
-						<div class="col-md-6" style="display: none;">
+					<div style="min-height: 70px;">
+						<span class="movieTitle"><a class="noLinkStyling" href="http://www.imdb.com/title/{{movie.imdbID}}">{{movie.Title}}</a></span>
+						<!--<div class="col-md-6">
 							<div style="width: 150px; height: 20px;">
 								<span class="col-md-6" style="margin: 0; padding: 0;">{{movie.Year}}</span>
 								<span class="col-md-6" style="margin: 0; padding: 0;">{{movie.Rated}}</span>
@@ -26,7 +26,7 @@
 							<div style="width: 150px;">
 								<span>{{movie.Genre}}</span>
 							</div>
-						</div>
+						</div>-->
 					</div>
 					<div>
 						<div class="people">
@@ -66,10 +66,9 @@
 					</div>
 				</div>
 				<div class="col-md-4" style="margin-top: 40px; text-align: center;">
-					<img src="{{movie.Poster}}" style="width: 400px;"/>	
+					<img src="{{movie.Poster}}" style="width: 100%;"/>
 				</div>
 			</div>
 		</div>
-		<script src="js/temp.js"/>
 	</body>
 </html>
